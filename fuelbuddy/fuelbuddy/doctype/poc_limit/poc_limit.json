@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{customer}",
+ "creation": "2023-09-25 14:54:46.494846",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_credit_limit",
+  "column_break_kmxjz",
+  "customer_default_payment_terms_template",
+  "section_break_mqy1f",
+  "poc_credit_limit",
+  "remaning_credit_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "no_copy": 1,
+   "options": "Customer"
+  },
+  {
+   "fieldname": "customer_credit_limit",
+   "fieldtype": "Currency",
+   "label": "Customer Credit Limit"
+  },
+  {
+   "fieldname": "column_break_kmxjz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_default_payment_terms_template",
+   "fieldtype": "Link",
+   "label": "Customer Default Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "section_break_mqy1f",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "poc_credit_limit",
+   "fieldtype": "Table",
+   "label": "POC Credit Limit",
+   "options": "Contact Limit"
+  },
+  {
+   "fieldname": "remaning_credit_limit",
+   "fieldtype": "Currency",
+   "label": "Remaning Credit Limit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-16 22:23:07.430590",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "POC Limit",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

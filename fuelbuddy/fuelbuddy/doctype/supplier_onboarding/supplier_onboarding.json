@@ -1,0 +1,915 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-17 18:15:52.494308",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "source_of_creation",
+  "supplier_opportunity",
+  "supplier_lead",
+  "supplier_name",
+  "omc",
+  "dealer_code",
+  "type_of_pumps",
+  "column_break_58o10",
+  "supplier_group",
+  "onboarding_owner",
+  "lead_owner",
+  "partner_type_section_section",
+  "supplier_group_",
+  "adhoc",
+  "business_partner",
+  "delivery_partner",
+  "direct",
+  "transactional",
+  "section_break_jmcqb",
+  "gantry",
+  "space_for_gantry",
+  "column_break_tptor",
+  "bowser",
+  "want_fuelbuddy_bowser",
+  "size_of_bowser_required",
+  "additional_information_section",
+  "type_of_vehicle_used",
+  "city_to_be_activated_in",
+  "commercials_section",
+  "moq",
+  "upload_existing_customer_data",
+  "column_break_1grsc",
+  "business_partner__margin",
+  "delivery_partner__margin",
+  "direct__margin",
+  "adhoc__margin",
+  "transactional__margin_",
+  "discount_or_margin",
+  "reason_for_less_margin",
+  "column_break_yhqt7",
+  "payment_terms",
+  "payment_by",
+  "amended_from",
+  "supplier_vehicle_section_section",
+  "supplier_vehicle_table",
+  "documents_section",
+  "gst_number",
+  "gst",
+  "pan_number",
+  "pan_card",
+  "digital_signature",
+  "column_break_nhotk",
+  "account_holder_name",
+  "bank_name",
+  "bank_account_number",
+  "ifsc_code",
+  "canceled_cheque",
+  "column_break_8r0s9",
+  "bank_statement_of_6_months",
+  "itr",
+  "other_section_section",
+  "arbitrage",
+  "hsd_price_for_the_day",
+  "monthly_ms_sale",
+  "monthly_preminum_ms_sale",
+  "column_break_tbmo3",
+  "monthly_hsd_sale",
+  "monthly_ddd_sales",
+  "no_of_visitors_per_month",
+  "contact_section_section",
+  "contact_person",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "email_id",
+  "mobile_no",
+  "column_break_qti4f",
+  "contact_type",
+  "owner_contact_number",
+  "owner_full_name",
+  "section_break_bssac",
+  "remarks",
+  "available_services_section",
+  "car_wash",
+  "water",
+  "bathing_facility",
+  "cafe",
+  "parking",
+  "convenience_store",
+  "mechanic",
+  "servicing",
+  "puc",
+  "drinking_water",
+  "column_break_ezbko",
+  "washroom",
+  "first_aid",
+  "dormitory",
+  "lubricant",
+  "oil_change",
+  "ad_blue",
+  "ev_charger__ac",
+  "ev_charger__dc",
+  "cng",
+  "battery_swapping",
+  "column_break_rl2es",
+  "petrol",
+  "petrol_xp_95",
+  "petrol_xp_100",
+  "diesel",
+  "e_20",
+  "other_special",
+  "nitrogen_air",
+  "puncture",
+  "air",
+  "tyre_sales",
+  "others"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "oldfieldname": "naming_series",
+   "oldfieldtype": "Select",
+   "options": "CRM-RO-LEAD-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "default": "ERP",
+   "fieldname": "source_of_creation",
+   "fieldtype": "Select",
+   "label": "Source of Creation",
+   "options": "\nERP\nFB APP"
+  },
+  {
+   "fieldname": "supplier_opportunity",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Supplier Opportunity",
+   "options": "Supplier Opportunity"
+  },
+  {
+   "fetch_from": "supplier_opportunity.supplier_lead",
+   "fieldname": "supplier_lead",
+   "fieldtype": "Link",
+   "label": "Supplier Lead",
+   "options": "Supplier Lead"
+  },
+  {
+   "fetch_from": "supplier_lead.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Name",
+   "oldfieldname": "lead_name",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fetch_from": "supplier_lead.omc",
+   "fieldname": "omc",
+   "fieldtype": "Link",
+   "label": "OMC",
+   "options": "OMC",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "supplier_lead.dealer_code",
+   "fieldname": "dealer_code",
+   "fieldtype": "Data",
+   "label": "Dealer Code"
+  },
+  {
+   "fetch_from": "supplier_lead.type_of_pumps",
+   "fieldname": "type_of_pumps",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Type of Pumps",
+   "options": "\nCompany Owned Company Operated\nCompany Owned Dealer Operated\nDealer Owned Dealer Operated",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_58o10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_lead.supplier_group",
+   "fieldname": "supplier_group",
+   "fieldtype": "Link",
+   "label": "Supplier Group",
+   "options": "Supplier Group",
+   "reqd": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "onboarding_owner",
+   "fieldtype": "Link",
+   "label": "Onboarding Owner",
+   "oldfieldname": "lead_owner",
+   "oldfieldtype": "Link",
+   "options": "User",
+   "search_index": 1
+  },
+  {
+   "fetch_from": "supplier_lead.lead_owner",
+   "fieldname": "lead_owner",
+   "fieldtype": "Link",
+   "label": "Lead Owner",
+   "options": "User"
+  },
+  {
+   "fieldname": "partner_type_section_section",
+   "fieldtype": "Section Break",
+   "label": "Partner Type Section"
+  },
+  {
+   "fieldname": "supplier_group_",
+   "fieldtype": "Table MultiSelect",
+   "hidden": 1,
+   "label": "Partner Type",
+   "options": "Multiple Supplier Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "adhoc",
+   "fieldtype": "Check",
+   "label": "ADHOC"
+  },
+  {
+   "default": "0",
+   "fieldname": "business_partner",
+   "fieldtype": "Check",
+   "label": "Business Partner"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivery_partner",
+   "fieldtype": "Check",
+   "label": "Delivery Partner"
+  },
+  {
+   "default": "0",
+   "fieldname": "direct",
+   "fieldtype": "Check",
+   "label": "Direct"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Retail Sales Partner\", \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "transactional",
+   "fieldtype": "Check",
+   "label": "Transactional"
+  },
+  {
+   "fieldname": "section_break_jmcqb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "supplier_lead.gantry",
+   "fieldname": "gantry",
+   "fieldtype": "Select",
+   "label": "Gantry",
+   "options": "\nAvailable\nNot Available"
+  },
+  {
+   "depends_on": "eval:in_list([\"Not Available\"], doc.gantry)",
+   "fieldname": "space_for_gantry",
+   "fieldtype": "Select",
+   "label": "Space for Gantry",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_tptor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_lead.bowser",
+   "fieldname": "bowser",
+   "fieldtype": "Select",
+   "label": "Bowser",
+   "options": "\nAvailable\nNot Available"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1))",
+   "fieldname": "want_fuelbuddy_bowser",
+   "fieldtype": "Select",
+   "label": "Want FuelBuddy Bowser",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1))",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Not Available\"], doc.bowser)",
+   "fieldname": "size_of_bowser_required",
+   "fieldtype": "Data",
+   "label": "Size of Bowser Required"
+  },
+  {
+   "fieldname": "additional_information_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "depends_on": "eval:in_list([\"Available\"],doc.bowser)",
+   "fieldname": "type_of_vehicle_used",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type of Vehicle used",
+   "mandatory_depends_on": "eval:in_list([\"Available\"],doc.bowser)",
+   "options": "\nBoth\nBowser\nSelf Pick up\nContainer"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1) || (doc.delivery_partner == 1)) || (doc.adhoc == 1) || (doc.direct == 1)",
+   "fieldname": "city_to_be_activated_in",
+   "fieldtype": "Link",
+   "label": "City to be activated in",
+   "options": "City"
+  },
+  {
+   "fieldname": "commercials_section",
+   "fieldtype": "Section Break",
+   "label": "Commercials"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1) || (doc.delivery_partner == 1)) || (doc.adhoc == 1)",
+   "fieldname": "moq",
+   "fieldtype": "Select",
+   "label": "MOQ",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1) || (doc.delivery_partner == 1)) || (doc.adhoc == 1)",
+   "options": "\n100-200\n200-500\n500-1000\n1000 & Above\nDirect Pick-up"
+  },
+  {
+   "fieldname": "upload_existing_customer_data",
+   "fieldtype": "Attach",
+   "label": "Upload Existing Customer Data"
+  },
+  {
+   "fieldname": "column_break_1grsc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1))",
+   "fieldname": "business_partner__margin",
+   "fieldtype": "Currency",
+   "label": "Business Partner - Margin",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1))"
+  },
+  {
+   "depends_on": "eval:((doc.delivery_partner == 1))",
+   "fieldname": "delivery_partner__margin",
+   "fieldtype": "Currency",
+   "label": "Delivery Partner - Margin",
+   "mandatory_depends_on": "eval:((doc.delivery_partner == 1))"
+  },
+  {
+   "depends_on": "eval:((doc.direct == 1))",
+   "fieldname": "direct__margin",
+   "fieldtype": "Currency",
+   "label": "Direct - Margin",
+   "mandatory_depends_on": "eval:((doc.direct == 1))"
+  },
+  {
+   "depends_on": "eval:((doc.adhoc == 1))",
+   "fieldname": "adhoc__margin",
+   "fieldtype": "Currency",
+   "label": "ADHOC - Margin",
+   "mandatory_depends_on": "eval:((doc.adhoc == 1))"
+  },
+  {
+   "depends_on": "eval:((doc.transactional == 1))",
+   "fieldname": "transactional__margin_",
+   "fieldtype": "Currency",
+   "label": "Transactional - Margin ",
+   "mandatory_depends_on": "eval:((doc.transactional == 1))"
+  },
+  {
+   "fieldname": "discount_or_margin",
+   "fieldtype": "Percent",
+   "hidden": 1,
+   "label": "Margin"
+  },
+  {
+   "fieldname": "reason_for_less_margin",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Reason for less Margin"
+  },
+  {
+   "fieldname": "column_break_yhqt7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Payment Terms ( Credit Days )",
+   "options": "Payment Term",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_by",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Payment By",
+   "options": "Fleet Card\nBank Transfer\nBoth"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Supplier Onboarding",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:in_list([\"Delivery Supply partner\", \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "supplier_vehicle_section_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Vehicle Section",
+   "mandatory_depends_on": "eval:in_list([\"Delivery/Supply partner\" , \"Franchisee\" ], doc.supplier_group)"
+  },
+  {
+   "depends_on": "eval:in_list([\"Delivery Supply partner\", \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "supplier_vehicle_table",
+   "fieldtype": "Table",
+   "label": "Supplier Vehicle Table",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1) || ( doc.delivery_partner == 1) )",
+   "options": "Supplier Vehicle Table"
+  },
+  {
+   "fieldname": "documents_section",
+   "fieldtype": "Section Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "gst_number",
+   "fieldtype": "Data",
+   "label": "GST Number"
+  },
+  {
+   "fieldname": "gst",
+   "fieldtype": "Attach Image",
+   "label": "GST"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "Pan Number"
+  },
+  {
+   "fieldname": "pan_card",
+   "fieldtype": "Attach Image",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "digital_signature",
+   "fieldtype": "Attach",
+   "label": "Digital Signature",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nhotk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_holder_name",
+   "fieldtype": "Data",
+   "label": "Account Holder Name"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank name"
+  },
+  {
+   "fieldname": "bank_account_number",
+   "fieldtype": "Data",
+   "label": "Bank Account Number"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "canceled_cheque",
+   "fieldtype": "Attach Image",
+   "label": "Canceled Cheque"
+  },
+  {
+   "fieldname": "column_break_8r0s9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1) || (doc.delivery_partner == 1)) || (doc.adhoc == 1)",
+   "fieldname": "bank_statement_of_6_months",
+   "fieldtype": "Attach",
+   "label": "Bank Statement of 6 Months",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1))"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1) || (doc.delivery_partner == 1)) || (doc.adhoc == 1)",
+   "fieldname": "itr",
+   "fieldtype": "Attach",
+   "label": "ITR",
+   "mandatory_depends_on": "eval:((doc.business_partner == 1))"
+  },
+  {
+   "fieldname": "other_section_section",
+   "fieldtype": "Section Break",
+   "label": "Other"
+  },
+  {
+   "fieldname": "arbitrage",
+   "fieldtype": "Data",
+   "label": "Arbitrage"
+  },
+  {
+   "fieldname": "hsd_price_for_the_day",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "HSD Price for the Day"
+  },
+  {
+   "depends_on": "eval:in_list([\"Retail Sales Partner\" , \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "monthly_ms_sale",
+   "fieldtype": "Data",
+   "label": "Monthly MS Sale"
+  },
+  {
+   "depends_on": "eval:in_list([\"Retail Sales Partner\" , \"Full Stack Partner\"], doc.supplier_group)",
+   "fieldname": "monthly_preminum_ms_sale",
+   "fieldtype": "Data",
+   "label": "Monthly Preminum MS Sale"
+  },
+  {
+   "fieldname": "column_break_tbmo3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "monthly_hsd_sale",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Monthly HSD Sale"
+  },
+  {
+   "depends_on": "eval:((doc.business_partner == 1) || ( doc.delivery_partner == 1) || (doc.direct == 1) )",
+   "fieldname": "monthly_ddd_sales",
+   "fieldtype": "Data",
+   "label": "Monthly DDD Sales"
+  },
+  {
+   "fieldname": "no_of_visitors_per_month",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "No. of visitors per month"
+  },
+  {
+   "fieldname": "contact_section_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Section"
+  },
+  {
+   "fetch_from": "supplier_lead.contact_person",
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact"
+  },
+  {
+   "fetch_from": "contact_person.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fetch_from": "contact_person.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fetch_from": "contact_person.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fetch_from": "contact_person.email",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Id"
+  },
+  {
+   "fetch_from": "contact_person.mobile_number",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "fieldname": "column_break_qti4f",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_lead.contact_type",
+   "fieldname": "contact_type",
+   "fieldtype": "Select",
+   "label": "Contact Type",
+   "options": "\nOwner\nManager"
+  },
+  {
+   "depends_on": "eval:(doc.contact_type ==\"Owner\")",
+   "fieldname": "owner_contact_number",
+   "fieldtype": "Data",
+   "label": "Owner Contact Number"
+  },
+  {
+   "depends_on": "eval:(doc.contact_type ==\"Owner\")",
+   "fieldname": "owner_full_name",
+   "fieldtype": "Data",
+   "label": "Owner Full Name"
+  },
+  {
+   "fieldname": "section_break_bssac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "depends_on": "eval:in_list([\"Retail Sales Partner\", \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "available_services_section",
+   "fieldtype": "Section Break",
+   "label": "Available Services"
+  },
+  {
+   "default": "0",
+   "fieldname": "car_wash",
+   "fieldtype": "Check",
+   "label": "Car Wash"
+  },
+  {
+   "default": "0",
+   "fieldname": "water",
+   "fieldtype": "Check",
+   "label": "Water"
+  },
+  {
+   "default": "0",
+   "fieldname": "bathing_facility",
+   "fieldtype": "Check",
+   "label": "Bathing Facility"
+  },
+  {
+   "default": "0",
+   "fieldname": "cafe",
+   "fieldtype": "Check",
+   "label": "Cafe"
+  },
+  {
+   "default": "0",
+   "fieldname": "parking",
+   "fieldtype": "Check",
+   "label": "Parking"
+  },
+  {
+   "default": "0",
+   "fieldname": "convenience_store",
+   "fieldtype": "Check",
+   "label": "Convenience Store"
+  },
+  {
+   "default": "0",
+   "fieldname": "mechanic",
+   "fieldtype": "Check",
+   "label": "Mechanic"
+  },
+  {
+   "default": "0",
+   "fieldname": "servicing",
+   "fieldtype": "Check",
+   "label": "Servicing"
+  },
+  {
+   "default": "0",
+   "fieldname": "puc",
+   "fieldtype": "Check",
+   "label": "PUC"
+  },
+  {
+   "default": "0",
+   "fieldname": "drinking_water",
+   "fieldtype": "Check",
+   "label": "Drinking Water"
+  },
+  {
+   "fieldname": "column_break_ezbko",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "washroom",
+   "fieldtype": "Check",
+   "label": "Washroom"
+  },
+  {
+   "default": "0",
+   "fieldname": "first_aid",
+   "fieldtype": "Check",
+   "label": "First Aid"
+  },
+  {
+   "default": "0",
+   "fieldname": "dormitory",
+   "fieldtype": "Check",
+   "label": "Dormitory"
+  },
+  {
+   "default": "0",
+   "fieldname": "lubricant",
+   "fieldtype": "Check",
+   "label": "Lubricant"
+  },
+  {
+   "default": "0",
+   "fieldname": "oil_change",
+   "fieldtype": "Check",
+   "label": "Oil Change"
+  },
+  {
+   "default": "0",
+   "fieldname": "ad_blue",
+   "fieldtype": "Check",
+   "label": "Ad Blue"
+  },
+  {
+   "default": "0",
+   "fieldname": "ev_charger__ac",
+   "fieldtype": "Check",
+   "label": "EV Charger - AC"
+  },
+  {
+   "default": "0",
+   "fieldname": "ev_charger__dc",
+   "fieldtype": "Check",
+   "label": "EV Charger - DC"
+  },
+  {
+   "default": "0",
+   "fieldname": "cng",
+   "fieldtype": "Check",
+   "label": "CNG"
+  },
+  {
+   "default": "0",
+   "fieldname": "battery_swapping",
+   "fieldtype": "Check",
+   "label": "Battery Swapping"
+  },
+  {
+   "fieldname": "column_break_rl2es",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "petrol",
+   "fieldtype": "Check",
+   "label": "Petrol"
+  },
+  {
+   "default": "0",
+   "fieldname": "petrol_xp_95",
+   "fieldtype": "Check",
+   "label": "Petrol XP 95"
+  },
+  {
+   "default": "0",
+   "fieldname": "petrol_xp_100",
+   "fieldtype": "Check",
+   "label": "Petrol XP 100"
+  },
+  {
+   "default": "0",
+   "fieldname": "diesel",
+   "fieldtype": "Check",
+   "label": "Diesel"
+  },
+  {
+   "default": "0",
+   "fieldname": "e_20",
+   "fieldtype": "Check",
+   "label": "E 20"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_special",
+   "fieldtype": "Check",
+   "label": "Other Special"
+  },
+  {
+   "default": "0",
+   "fieldname": "nitrogen_air",
+   "fieldtype": "Check",
+   "label": "Nitrogen Air"
+  },
+  {
+   "default": "0",
+   "fieldname": "puncture",
+   "fieldtype": "Check",
+   "label": "Puncture"
+  },
+  {
+   "default": "0",
+   "fieldname": "air",
+   "fieldtype": "Check",
+   "label": "Air"
+  },
+  {
+   "default": "0",
+   "fieldname": "tyre_sales",
+   "fieldtype": "Check",
+   "label": "Tyre Sales"
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Data",
+   "label": "Others"
+  }
+ ],
+ "icon": "fa fa-user",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Supplier",
+   "link_fieldname": "ro_onboarding"
+  },
+  {
+   "link_doctype": "Sales Partner",
+   "link_fieldname": "partner_name"
+  }
+ ],
+ "make_attachments_public": 1,
+ "modified": "2023-10-16 21:11:44.610664",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Supplier Onboarding",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sender_field": "email_id",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "subject_field": "title",
+ "title_field": "supplier_name",
+ "track_changes": 1
+}

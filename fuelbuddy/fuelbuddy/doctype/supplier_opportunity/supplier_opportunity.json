@@ -1,0 +1,381 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-08-31 17:02:14.840115",
+ "default_view": "List",
+ "description": "Potential Sales Deal",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "source_of_creation",
+  "column_break_gblg9",
+  "oppotunity_creation_date",
+  "expected_closing",
+  "lead_information_section",
+  "supplier_lead",
+  "supplier_name",
+  "omc",
+  "column_break_dkxd3",
+  "dealer_code",
+  "type_of_pumps",
+  "gantry__bowser_details_section",
+  "gantry",
+  "space_for_gantry",
+  "column_break_r7zf9",
+  "bowser",
+  "want_fuelbuddy_bowser",
+  "size_of_bowser",
+  "more_info",
+  "company",
+  "campaign",
+  "transaction_date",
+  "column_break1",
+  "language",
+  "amended_from",
+  "title",
+  "first_response_time",
+  "competitors",
+  "lost_detail_section",
+  "lost_reasons",
+  "order_lost_reason",
+  "column_break_56",
+  "activities_tab",
+  "open_activities_html",
+  "all_activities_section",
+  "all_activities_html",
+  "notes_tab",
+  "notes_html",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "oldfieldname": "naming_series",
+   "oldfieldtype": "Select",
+   "options": "CRM-OPP-.YYYY.-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "ERP",
+   "fieldname": "source_of_creation",
+   "fieldtype": "Select",
+   "label": "Source of Creation",
+   "options": "ERP\nFB_APP"
+  },
+  {
+   "fieldname": "column_break_gblg9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "oppotunity_creation_date",
+   "fieldtype": "Date",
+   "label": "Oppotunity Creation Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expected_closing",
+   "fieldtype": "Date",
+   "label": "Expected Closing Date"
+  },
+  {
+   "fieldname": "lead_information_section",
+   "fieldtype": "Section Break",
+   "label": "Lead Information"
+  },
+  {
+   "fieldname": "supplier_lead",
+   "fieldtype": "Link",
+   "label": "Supplier Lead",
+   "options": "Supplier Lead"
+  },
+  {
+   "fetch_from": "supplier_lead.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name"
+  },
+  {
+   "fetch_from": "supplier_lead.omc",
+   "fieldname": "omc",
+   "fieldtype": "Link",
+   "label": "OMC",
+   "options": "OMC"
+  },
+  {
+   "fieldname": "column_break_dkxd3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_lead.dealer_code",
+   "fieldname": "dealer_code",
+   "fieldtype": "Data",
+   "label": "Dealer Code"
+  },
+  {
+   "fetch_from": "supplier_lead.type_of_pumps",
+   "fieldname": "type_of_pumps",
+   "fieldtype": "Select",
+   "label": "Type of Pumps",
+   "options": "\nCompany Owned Company Operated\nCompany Owned Dealer Operated\nDealer Owned Dealer Operated"
+  },
+  {
+   "fieldname": "gantry__bowser_details_section",
+   "fieldtype": "Section Break",
+   "label": "Gantry / Bowser Details"
+  },
+  {
+   "fetch_from": "supplier_lead.gantry",
+   "fieldname": "gantry",
+   "fieldtype": "Select",
+   "label": "Gantry",
+   "options": "\nAvailable\nNot Available",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:in_list([\"Not Available\"], doc.gantry)",
+   "fieldname": "space_for_gantry",
+   "fieldtype": "Select",
+   "label": "Space for Gantry",
+   "mandatory_depends_on": "eval:in_list([\"Not Available\"], doc.gantry)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fieldname": "column_break_r7zf9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_lead.bowser",
+   "fieldname": "bowser",
+   "fieldtype": "Select",
+   "label": "Bowser",
+   "options": "\nAvailable\nNot Available",
+   "reqd": 1
+  },
+  {
+   "default": "Yes",
+   "depends_on": "eval:in_list([\"Not Available\"], doc.bowser)",
+   "fieldname": "want_fuelbuddy_bowser",
+   "fieldtype": "Select",
+   "label": "Want FuelBuddy Bowser",
+   "mandatory_depends_on": "eval:in_list([\"Not Available\"], doc.bowser)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:in_list([\"Not Available\"], doc.bowser)",
+   "fieldname": "size_of_bowser",
+   "fieldtype": "Data",
+   "label": "Size of Bowser Required",
+   "mandatory_depends_on": "eval:in_list([\"Not Available\"], doc.bowser)"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_info",
+   "fieldtype": "Section Break",
+   "label": "More Information",
+   "oldfieldtype": "Section Break",
+   "options": "fa fa-file-text"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "oldfieldname": "company",
+   "oldfieldtype": "Link",
+   "options": "Company",
+   "print_hide": 1,
+   "remember_last_selected_value": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval: doc.source==\"Campaign\"",
+   "description": "Enter name of campaign if source of enquiry is campaign",
+   "fieldname": "campaign",
+   "fieldtype": "Link",
+   "label": "Campaign",
+   "oldfieldname": "campaign",
+   "oldfieldtype": "Link",
+   "options": "Campaign"
+  },
+  {
+   "default": "Today",
+   "fieldname": "transaction_date",
+   "fieldtype": "Date",
+   "label": "Opportunity Date",
+   "oldfieldname": "transaction_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "width": "50px"
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "oldfieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Link",
+   "label": "Print Language",
+   "options": "Language"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "ignore_user_permissions": 1,
+   "label": "Amended From",
+   "no_copy": 1,
+   "oldfieldname": "amended_from",
+   "oldfieldtype": "Data",
+   "options": "Opportunity",
+   "print_hide": 1,
+   "read_only": 1,
+   "width": "150px"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "no_copy": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "first_response_time",
+   "fieldtype": "Duration",
+   "label": "First Response Time",
+   "read_only": 1
+  },
+  {
+   "fieldname": "competitors",
+   "fieldtype": "Table MultiSelect",
+   "label": "Competitors",
+   "options": "Competitor Detail"
+  },
+  {
+   "depends_on": "eval:doc.status===\"Lost\"",
+   "fieldname": "lost_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Lost Reasons"
+  },
+  {
+   "depends_on": "eval:doc.status===\"Lost\"",
+   "fieldname": "lost_reasons",
+   "fieldtype": "Table MultiSelect",
+   "label": "Lost Reasons",
+   "options": "Opportunity Lost Reason Detail",
+   "read_only": 1
+  },
+  {
+   "fieldname": "order_lost_reason",
+   "fieldtype": "Small Text",
+   "label": "Detailed Reason",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_56",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "activities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "open_activities_html",
+   "fieldtype": "HTML",
+   "label": "Open Activities HTML"
+  },
+  {
+   "fieldname": "all_activities_section",
+   "fieldtype": "Section Break",
+   "label": "All Activities"
+  },
+  {
+   "fieldname": "all_activities_html",
+   "fieldtype": "HTML",
+   "label": "All Activities HTML"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "notes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "notes_html",
+   "fieldtype": "HTML",
+   "label": "Notes HTML"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Notes",
+   "no_copy": 1,
+   "options": "CRM Note"
+  }
+ ],
+ "icon": "fa fa-info-sign",
+ "links": [
+  {
+   "link_doctype": "Supplier Onboarding",
+   "link_fieldname": "supplier_opportunity"
+  }
+ ],
+ "modified": "2023-10-16 22:26:30.839860",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Supplier Opportunity",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "transaction_date",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "subject_field": "title",
+ "title_field": "title",
+ "track_seen": 1,
+ "track_views": 1
+}

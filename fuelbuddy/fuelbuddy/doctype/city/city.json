@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:city",
+ "creation": "2023-07-19 15:35:18.366587",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "state",
+  "hasura_state_id",
+  "country",
+  "hasura_country_id",
+  "city",
+  "hasura_city_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fetch_from": "state.hasura_state_id",
+   "fieldname": "hasura_state_id",
+   "fieldtype": "Data",
+   "label": "Hasura State Id",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "state.country",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country"
+  },
+  {
+   "fetch_from": "country.hasura_country_id",
+   "fieldname": "hasura_country_id",
+   "fieldtype": "Data",
+   "label": "Hasura Country Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City",
+   "unique": 1
+  },
+  {
+   "fieldname": "hasura_city_id",
+   "fieldtype": "Data",
+   "label": "Hasura City Id",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-16 22:24:20.470566",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "City",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

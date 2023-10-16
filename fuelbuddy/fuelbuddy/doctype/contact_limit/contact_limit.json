@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-03 10:41:52.348979",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contact",
+  "limit"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "columns": 2,
+   "fieldname": "limit",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Limit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-16 22:23:36.173148",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Contact Limit",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

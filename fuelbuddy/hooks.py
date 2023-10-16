@@ -1,3 +1,4 @@
+
 from . import __version__ as app_version
 
 app_name = "fuelbuddy"
@@ -102,13 +103,13 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
+doc_events = {
+	"Lead": {
+		"after_insert": "fuelbuddy.fuel.chem",
 #		"on_cancel": "method",
 #		"on_trash": "method"
-#	}
-# }
+	}
+}
 
 # Scheduled Tasks
 # ---------------

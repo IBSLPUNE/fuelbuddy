@@ -1,0 +1,589 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-07-17 12:44:25.198206",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "email_append_to": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "dashboard_tab",
+  "source_of_creation",
+  "naming_series",
+  "supplier_name",
+  "omc",
+  "dealer_code",
+  "column_break_o38hp",
+  "type_of_pumps",
+  "supplier_group",
+  "supplier_group_",
+  "section_break_oig7b",
+  "contact_type",
+  "contact_person",
+  "city_to_be_activated_in",
+  "col_break123",
+  "state_to_be_activated_in",
+  "lead_owner",
+  "status",
+  "contact_info_tab",
+  "first_name",
+  "email_id",
+  "column_break_20",
+  "middle_name",
+  "mobile_no",
+  "column_break_16",
+  "last_name",
+  "whatsapp_no",
+  "section_break_gqczq",
+  "gantry",
+  "column_break_tzk2i",
+  "bowser",
+  "address_section",
+  "address",
+  "address_title",
+  "address_type",
+  "address_line1",
+  "address_line2",
+  "column_break_9yqbn",
+  "country",
+  "state",
+  "city",
+  "pincode",
+  "qualification_tab",
+  "qualification_status",
+  "column_break_64",
+  "qualified_by",
+  "qualified_on",
+  "other_info_tab",
+  "campaign_name",
+  "company",
+  "column_break_22",
+  "title",
+  "column_break_50",
+  "disabled",
+  "unsubscribed",
+  "blog_subscriber",
+  "activities_tab",
+  "open_activities_html",
+  "all_activities_section",
+  "all_activities_html",
+  "notes_tab",
+  "notes_html",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "dashboard_tab",
+   "fieldtype": "Section Break",
+   "label": "Connections",
+   "show_dashboard": 1
+  },
+  {
+   "default": "ERP",
+   "fieldname": "source_of_creation",
+   "fieldtype": "Select",
+   "label": "Source of Creation",
+   "options": "ERP\nFB_APP"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "oldfieldname": "naming_series",
+   "oldfieldtype": "Select",
+   "options": "CRM-RO-LEAD-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "omc",
+   "fieldtype": "Link",
+   "label": "OMC",
+   "options": "OMC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dealer_code",
+   "fieldtype": "Data",
+   "label": "Dealer Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_o38hp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_pumps",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Type of Pumps",
+   "options": "\nCompany Owned Company Operated\nCompany Owned Dealer Operated\nDealer Owned Dealer Operated",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Supplier Group",
+   "options": "Supplier Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier_group_",
+   "fieldtype": "Table MultiSelect",
+   "hidden": 1,
+   "label": "Supplier Group ",
+   "options": "Multiple Supplier Group"
+  },
+  {
+   "fieldname": "section_break_oig7b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_type",
+   "fieldtype": "Select",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Contact Type",
+   "options": "\nOwner\nManager"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Contact Person",
+   "oldfieldname": "lead_name",
+   "oldfieldtype": "Data",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city_to_be_activated_in",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "City to be activated in",
+   "options": "City"
+  },
+  {
+   "fieldname": "col_break123",
+   "fieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fieldname": "state_to_be_activated_in",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "default": "__user",
+   "fieldname": "lead_owner",
+   "fieldtype": "Link",
+   "label": "Lead Owner",
+   "oldfieldname": "lead_owner",
+   "oldfieldtype": "Link",
+   "options": "User",
+   "search_index": 1
+  },
+  {
+   "default": "Lead",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "oldfieldname": "status",
+   "oldfieldtype": "Select",
+   "options": "Lead\nOpen\nRe-Open\nReplied\nConverted\nDo Not Contact",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "contact_info_tab",
+   "fieldtype": "Section Break",
+   "label": "Contact Info"
+  },
+  {
+   "fetch_from": "contact.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.email",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email",
+   "oldfieldname": "email_id",
+   "oldfieldtype": "Data",
+   "options": "Email",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contact.middle_name",
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.mobile_number",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "oldfieldname": "mobile_no",
+   "oldfieldtype": "Data",
+   "options": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "contact.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "whatsapp_no",
+   "fieldtype": "Data",
+   "label": "WhatsApp",
+   "options": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gqczq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gantry",
+   "fieldtype": "Select",
+   "label": "Gantry",
+   "options": "\nAvailable\nNot Available"
+  },
+  {
+   "fieldname": "column_break_tzk2i",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bowser",
+   "fieldtype": "Select",
+   "label": "Bowser",
+   "options": "\nAvailable\nNot Available"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "address.address_title",
+   "fieldname": "address_title",
+   "fieldtype": "Data",
+   "label": "Address Title"
+  },
+  {
+   "fieldname": "address_type",
+   "fieldtype": "Select",
+   "label": "Address Type",
+   "options": "Billing\nShipping\nOffice\nPersonal\nPlant\nPostal\nShop\nSubsidiary\nWarehouse\nCurrent\nPermanent\nOther",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "address.address_title",
+   "fieldname": "address_line1",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "address.address_title",
+   "fieldname": "address_line2",
+   "fieldtype": "Data",
+   "label": "Address Line 2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9yqbn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "address.country",
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "address.state_",
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "address.city_",
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "address.pincode",
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "label": "Postal Code",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "qualification_tab",
+   "fieldtype": "Section Break",
+   "label": "Qualification",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qualification_status",
+   "fieldtype": "Select",
+   "label": "Qualification Status",
+   "options": "Unqualified\nIn Process\nQualified",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_64",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qualified_by",
+   "fieldtype": "Link",
+   "label": "Qualified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qualified_on",
+   "fieldtype": "Date",
+   "label": "Qualified on",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "other_info_tab",
+   "fieldtype": "Section Break",
+   "label": "Additional Information",
+   "read_only": 1
+  },
+  {
+   "fieldname": "campaign_name",
+   "fieldtype": "Link",
+   "label": "Campaign Name",
+   "oldfieldname": "campaign_name",
+   "oldfieldtype": "Link",
+   "options": "Campaign",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "oldfieldname": "company",
+   "oldfieldtype": "Link",
+   "options": "Company",
+   "read_only": 1,
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Title",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_50",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "unsubscribed",
+   "fieldtype": "Check",
+   "label": "Unsubscribed",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "blog_subscriber",
+   "fieldtype": "Check",
+   "label": "Blog Subscriber",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "activities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Activities"
+  },
+  {
+   "fieldname": "open_activities_html",
+   "fieldtype": "HTML",
+   "label": "Open Activities HTML"
+  },
+  {
+   "fieldname": "all_activities_section",
+   "fieldtype": "Section Break",
+   "label": "All Activities"
+  },
+  {
+   "fieldname": "all_activities_html",
+   "fieldtype": "HTML",
+   "label": "All Activities HTML"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "notes_tab",
+   "fieldtype": "Tab Break",
+   "label": "Comments"
+  },
+  {
+   "fieldname": "notes_html",
+   "fieldtype": "HTML",
+   "label": "Notes HTML"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "Notes",
+   "no_copy": 1,
+   "options": "CRM Note"
+  }
+ ],
+ "icon": "fa fa-user",
+ "links": [
+  {
+   "link_doctype": "Supplier Onboarding",
+   "link_fieldname": "supplier_lead"
+  }
+ ],
+ "modified": "2023-10-16 22:26:05.472540",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Supplier Lead",
+ "name_case": "Title Case",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "permlevel": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User"
+  }
+ ],
+ "search_fields": "supplier_name,lead_owner,status",
+ "sender_field": "email_id",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "subject_field": "title",
+ "title_field": "supplier_name"
+}

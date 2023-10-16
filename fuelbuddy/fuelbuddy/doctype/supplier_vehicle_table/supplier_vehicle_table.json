@@ -1,0 +1,266 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-09 11:16:56.362914",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "vehicle_number",
+  "warehouse",
+  "capacity",
+  "signed_sop_acceptance",
+  "expire_date_of_signed_sop_acceptance",
+  "weights_and_measure_du",
+  "expire_date_of_weights_and_measure_du",
+  "5_litre_jar_test_certificate",
+  "expire_date_of_5_litre_jar_test_certificate",
+  "dip_test_kit_certificate",
+  "density_test_kit_certificate",
+  "hydrometer_test_certificate",
+  "expire_date_of_hydrometer_test_certificate",
+  "thermometer_test_certificate",
+  "expire_date_of_thermometer_test_certificate",
+  "column_break_uughl",
+  "weights_and_measure_chamber",
+  "expire_date_of_weights_and_measure_chamber",
+  "peso_certificate",
+  "expire_date_of_peso_certificate",
+  "rc",
+  "expire_date_of_rc",
+  "insurance_image",
+  "expire_date_of_insurance_image",
+  "section_break_p7fb8",
+  "mv_tax",
+  "expire_date_of_mv_tax",
+  "pollution_certificate",
+  "expire_date_of_pollution_certificate",
+  "goods_permit",
+  "expire_date_of_goods_permit",
+  "vehicle_fitness_certificate",
+  "expire_date_of_vehicle_fitness_certificate",
+  "column_break_admyr",
+  "driver"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Vehicle Number",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "capacity",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Capacity",
+   "options": "Capacity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signed_sop_acceptance",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Signed SOP Acceptance"
+  },
+  {
+   "fieldname": "expire_date_of_signed_sop_acceptance",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Expire Date of Signed SOP Acceptance"
+  },
+  {
+   "fieldname": "weights_and_measure_du",
+   "fieldtype": "Attach",
+   "label": "Weights and Measure DU"
+  },
+  {
+   "fieldname": "expire_date_of_weights_and_measure_du",
+   "fieldtype": "Date",
+   "label": "Expire Date of Weights and Measure DU",
+   "reqd": 1
+  },
+  {
+   "fieldname": "5_litre_jar_test_certificate",
+   "fieldtype": "Attach",
+   "label": "5 Litre jar test certificate"
+  },
+  {
+   "fieldname": "expire_date_of_5_litre_jar_test_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of 5 Litre jar test certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dip_test_kit_certificate",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "DIP test kit certificate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "density_test_kit_certificate",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "Density test kit certificate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hydrometer_test_certificate",
+   "fieldtype": "Attach",
+   "label": "Hydrometer test certificate"
+  },
+  {
+   "fieldname": "expire_date_of_hydrometer_test_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of Hydrometer test certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "thermometer_test_certificate",
+   "fieldtype": "Attach",
+   "label": "Thermometer test certificate"
+  },
+  {
+   "fieldname": "expire_date_of_thermometer_test_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of Thermometer test certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uughl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weights_and_measure_chamber",
+   "fieldtype": "Attach",
+   "label": "Weights and Measure Chamber"
+  },
+  {
+   "fieldname": "expire_date_of_weights_and_measure_chamber",
+   "fieldtype": "Date",
+   "label": "Expire Date of Weights and Measure Chamber",
+   "reqd": 1
+  },
+  {
+   "fieldname": "peso_certificate",
+   "fieldtype": "Attach",
+   "label": "PESO Certificate"
+  },
+  {
+   "fieldname": "expire_date_of_peso_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of PESO Certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rc",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "RC"
+  },
+  {
+   "fieldname": "expire_date_of_rc",
+   "fieldtype": "Date",
+   "label": "Expire Date of RC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "insurance_image",
+   "fieldtype": "Attach",
+   "label": "Insurance Image"
+  },
+  {
+   "fieldname": "expire_date_of_insurance_image",
+   "fieldtype": "Date",
+   "label": "Expire Date of Insurance Image",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_p7fb8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mv_tax",
+   "fieldtype": "Attach",
+   "label": "MV Tax"
+  },
+  {
+   "fieldname": "expire_date_of_mv_tax",
+   "fieldtype": "Date",
+   "label": "Expire Date of MV Tax",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pollution_certificate",
+   "fieldtype": "Attach",
+   "label": "Pollution Certificate"
+  },
+  {
+   "fieldname": "expire_date_of_pollution_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of Pollution Certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "goods_permit",
+   "fieldtype": "Attach",
+   "label": "Goods Permit"
+  },
+  {
+   "fieldname": "expire_date_of_goods_permit",
+   "fieldtype": "Date",
+   "label": "Expire Date of Goods Permit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle_fitness_certificate",
+   "fieldtype": "Attach",
+   "label": "Vehicle fitness certificate"
+  },
+  {
+   "fieldname": "expire_date_of_vehicle_fitness_certificate",
+   "fieldtype": "Date",
+   "label": "Expire Date of Vehicle fitness certificate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_admyr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-16 22:07:53.309046",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Supplier Vehicle Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

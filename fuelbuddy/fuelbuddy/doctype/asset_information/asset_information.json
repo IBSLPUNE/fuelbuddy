@@ -1,0 +1,41 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-03 15:48:00.458310",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "assest_type",
+  "size_of_asset"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "assest_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Assest Type",
+   "options": "\nFleet\nDG\nTank"
+  },
+  {
+   "columns": 3,
+   "fieldname": "size_of_asset",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Size of asset"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-16 22:22:27.947320",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Asset Information",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
