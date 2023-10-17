@@ -1,0 +1,441 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2023-10-17 15:01:02.787806",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "opportunity",
+  "customer_name",
+  "date",
+  "column_break_4",
+  "opportunity_from",
+  "party",
+  "status",
+  "section_break_7",
+  "item_code",
+  "column_break1",
+  "item_name",
+  "delivery_fees",
+  "credit",
+  "credit_day",
+  "currenlty_any_discount_",
+  "current_discount",
+  "proposers_recommendations_section",
+  "date_of_meeting",
+  "location",
+  "industry",
+  "monthly_quantity",
+  "column_break_rbj33",
+  "min_order_quantity",
+  "discount",
+  "credit_limit_and_payment_terms_section",
+  "security_cheque",
+  "agreement",
+  "payment_terms",
+  "credit_limit",
+  "delivery_fees_tab",
+  "poc",
+  "financials_client_section",
+  "profitloss",
+  "turnover",
+  "column_break_0sigx",
+  "loans_and_advances",
+  "debt_equity_ratio",
+  "financials_deal_section",
+  "ro_margin",
+  "fleet_card_omcs",
+  "arbitrage",
+  "column_break_ehuah",
+  "dsa_margin",
+  "net_per_litre_expected_margin",
+  "section_break_14",
+  "inspected_by",
+  "verified_by",
+  "column_break_17",
+  "remarks",
+  "amended_from",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "FIN-.YYYY.-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "opportunity",
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity"
+  },
+  {
+   "fetch_from": "opportunity.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "oldfieldname": "report_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "opportunity.opportunity_from",
+   "fieldname": "opportunity_from",
+   "fieldtype": "Link",
+   "label": "Opportunity From",
+   "options": "DocType"
+  },
+  {
+   "fetch_from": "opportunity.party_name",
+   "fieldname": "party",
+   "fieldtype": "Data",
+   "label": "Party",
+   "options": "opportunity_from"
+  },
+  {
+   "default": "Accepted",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nAccepted\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "opportunity.fuel_type",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "oldfieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_fees",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Delivery Fees",
+   "options": "Delivery Fees",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "opportunity.credit",
+   "fieldname": "credit",
+   "fieldtype": "Select",
+   "label": "Currently Own Credit?",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.credit == \"Yes\"",
+   "fetch_from": "opportunity.credit_day",
+   "fieldname": "credit_day",
+   "fieldtype": "Data",
+   "label": "Credit day"
+  },
+  {
+   "fetch_from": "opportunity.currenlty_any_discount",
+   "fieldname": "currenlty_any_discount_",
+   "fieldtype": "Select",
+   "label": "Currenlty any Discount ?",
+   "options": "\nYes\nNo"
+  },
+  {
+   "fetch_from": "opportunity.current_discount",
+   "fieldname": "current_discount",
+   "fieldtype": "Float",
+   "label": "Current Discount ( Rs/Litre )"
+  },
+  {
+   "fieldname": "proposers_recommendations_section",
+   "fieldtype": "Section Break",
+   "label": "Proposer's Recommendations"
+  },
+  {
+   "fieldname": "date_of_meeting",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Date of Meeting"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Location",
+   "options": "City"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Industry",
+   "options": "Industry Type"
+  },
+  {
+   "fieldname": "monthly_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Monthly Quantity"
+  },
+  {
+   "fieldname": "column_break_rbj33",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "min_order_quantity",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Min. Order Quantity"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Discount"
+  },
+  {
+   "fieldname": "credit_limit_and_payment_terms_section",
+   "fieldtype": "Section Break",
+   "label": "Credit Limit and Payment Terms"
+  },
+  {
+   "fieldname": "security_cheque",
+   "fieldtype": "Attach",
+   "label": "Security Cheque"
+  },
+  {
+   "fieldname": "agreement",
+   "fieldtype": "Attach",
+   "label": "Agreement"
+  },
+  {
+   "fieldname": "payment_terms",
+   "fieldtype": "Link",
+   "label": "Default Payment Terms Template",
+   "options": "Payment Terms Template"
+  },
+  {
+   "fieldname": "credit_limit",
+   "fieldtype": "Table",
+   "label": "Credit Limit",
+   "options": "Customer Credit Limit"
+  },
+  {
+   "fieldname": "delivery_fees_tab",
+   "fieldtype": "Section Break",
+   "label": "Delivery Fees"
+  },
+  {
+   "fieldname": "poc",
+   "fieldtype": "Table",
+   "label": "POC",
+   "options": "Finance POC"
+  },
+  {
+   "fieldname": "financials_client_section",
+   "fieldtype": "Section Break",
+   "label": "Financials Client"
+  },
+  {
+   "fieldname": "profitloss",
+   "fieldtype": "Data",
+   "label": "Profit/Loss"
+  },
+  {
+   "fieldname": "turnover",
+   "fieldtype": "Data",
+   "label": "Turnover"
+  },
+  {
+   "fieldname": "column_break_0sigx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loans_and_advances",
+   "fieldtype": "Data",
+   "label": "Loans and Advances"
+  },
+  {
+   "fieldname": "debt_equity_ratio",
+   "fieldtype": "Data",
+   "label": "Debt Equity Ratio"
+  },
+  {
+   "fieldname": "financials_deal_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Financials Deal"
+  },
+  {
+   "fieldname": "ro_margin",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "RO Margin"
+  },
+  {
+   "fieldname": "fleet_card_omcs",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Fleet Card - OMC's"
+  },
+  {
+   "fieldname": "arbitrage",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Arbitrage"
+  },
+  {
+   "fieldname": "column_break_ehuah",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "dsa_margin",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "DSA Margin"
+  },
+  {
+   "fieldname": "net_per_litre_expected_margin",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Net per litre expected Margin"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "user",
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "oldfieldname": "inspected_by",
+   "oldfieldtype": "Data",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Data",
+   "label": "Verified By",
+   "oldfieldname": "verified_by",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks",
+   "no_copy": 1,
+   "oldfieldname": "remarks",
+   "oldfieldtype": "Text"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finance",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Finance",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "icon": "fa fa-search",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-17 15:01:02.787806",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Finance",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "item_code, date",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "customer_name"
+}

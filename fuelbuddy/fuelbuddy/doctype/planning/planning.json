@@ -1,0 +1,412 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2023-10-17 15:02:43.791415",
+ "default_view": "List",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "opportunity",
+  "customer_name",
+  "report_date",
+  "column_break_4",
+  "opportunity_from",
+  "party",
+  "status",
+  "section_break_7",
+  "item_code",
+  "column_break1",
+  "item_name",
+  "specification_details",
+  "moq_11",
+  "google_location_of_cx",
+  "total_fleet_size",
+  "no_of_petrol_vehicles",
+  "no_of_fueling_locations",
+  "no_of_diesel_vehicles",
+  "column_break_w2vnm",
+  "monthly_consumption",
+  "asset_type",
+  "preferred_time_slots",
+  "approved_time_slots",
+  "no_of_vehicles_per_slot",
+  "contact_section",
+  "poc",
+  "section_break_bctcf",
+  "mobile_number",
+  "full_name",
+  "email_id",
+  "address_section_section",
+  "address",
+  "address_html",
+  "supplier_section_section",
+  "supplier",
+  "suppler_name",
+  "column_break_5zouw",
+  "supplier_group",
+  "section_break_e05al",
+  "inspected_by",
+  "verified_by",
+  "column_break_17",
+  "remarks",
+  "amended_from",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PLN-.YYYY.-",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "opportunity",
+   "fieldtype": "Link",
+   "label": "Opportunity",
+   "options": "Opportunity",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "opportunity.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "default": "Today",
+   "fieldname": "report_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Report Date",
+   "oldfieldname": "report_date",
+   "oldfieldtype": "Date",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "opportunity.opportunity_from",
+   "fieldname": "opportunity_from",
+   "fieldtype": "Link",
+   "label": "Opportunity From",
+   "options": "DocType"
+  },
+  {
+   "fetch_from": "opportunity.party_name",
+   "fieldname": "party",
+   "fieldtype": "Data",
+   "label": "Party",
+   "options": "opportunity_from"
+  },
+  {
+   "default": "Request by BD",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "\nAccepted\nRequest by BD\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "opportunity.fuel_type",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "oldfieldname": "item_code",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "oldfieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "specification_details",
+   "fieldtype": "Section Break",
+   "oldfieldtype": "Section Break",
+   "options": "Simple"
+  },
+  {
+   "fetch_from": "opportunity.moq",
+   "fieldname": "moq_11",
+   "fieldtype": "Float",
+   "label": "MOQ"
+  },
+  {
+   "fieldname": "google_location_of_cx",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Google location of Cx"
+  },
+  {
+   "fetch_from": "opportunity.size_of_fleet_asset",
+   "fieldname": "total_fleet_size",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Total Fleet Size"
+  },
+  {
+   "fieldname": "no_of_petrol_vehicles",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "No. of Petrol Vehicles"
+  },
+  {
+   "fieldname": "no_of_fueling_locations",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "No. of Fueling Locations"
+  },
+  {
+   "fieldname": "no_of_diesel_vehicles",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "No. of Diesel Vehicles"
+  },
+  {
+   "fieldname": "column_break_w2vnm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "opportunity.monthaly_consumption",
+   "fieldname": "monthly_consumption",
+   "fieldtype": "Data",
+   "label": "Monthly Consumption"
+  },
+  {
+   "fieldname": "asset_type",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Asset Type",
+   "options": "Asset Category"
+  },
+  {
+   "fieldname": "preferred_time_slots",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Preferred Time Slots"
+  },
+  {
+   "fieldname": "approved_time_slots",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Approved Time Slots"
+  },
+  {
+   "fieldname": "no_of_vehicles_per_slot",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "No. of vehicles per slot",
+   "precision": "0"
+  },
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Section"
+  },
+  {
+   "fieldname": "poc",
+   "fieldtype": "Table",
+   "label": "POC",
+   "options": "Planning POC"
+  },
+  {
+   "fieldname": "section_break_bctcf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "contact.mobile_number",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.full_name",
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.email",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_section_section",
+   "fieldtype": "Section Break",
+   "label": "Address Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "opportunity.address_display",
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_section_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "suppler_name",
+   "fieldtype": "Data",
+   "label": "Suppler Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5zouw",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "supplier.supplier_group",
+   "fieldname": "supplier_group",
+   "fieldtype": "Link",
+   "label": "Supplier Group",
+   "options": "Supplier Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_e05al",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "user",
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "oldfieldname": "inspected_by",
+   "oldfieldtype": "Data",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Data",
+   "label": "Verified By",
+   "oldfieldname": "verified_by",
+   "oldfieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks",
+   "no_copy": 1,
+   "oldfieldname": "remarks",
+   "oldfieldtype": "Text"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Planning",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Planning",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "icon": "fa fa-search",
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-17 15:02:43.791415",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Planning",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Quality Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "item_code, report_date",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "states": []
+}

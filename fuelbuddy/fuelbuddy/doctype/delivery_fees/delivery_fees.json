@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-17 15:16:31.708359",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_name",
+  "delivery_type",
+  "column_break_doasm",
+  "contact",
+  "address",
+  "address_line_1",
+  "address_line_2",
+  "address_type",
+  "city",
+  "state",
+  "fixed_feeindependent_of_qty",
+  "standard_feesabove_199_lt",
+  "variable_slab_section",
+  "upto_qty",
+  "section_break_yr9pb",
+  "upto_rate",
+  "upto_fixed_amount",
+  "column_break_exsv0",
+  "above_rate",
+  "above_fixed_amount",
+  "amended_from",
+  "section_break_ae70n",
+  "finance_poc",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": " Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "delivery_type",
+   "fieldtype": "Select",
+   "label": "Delivery Type",
+   "options": "\nStandard Delivery Fees\nFixed Delivery Fees\nVariable Delivery Fees"
+  },
+  {
+   "fieldname": "column_break_doasm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "address_type",
+   "fieldtype": "Select",
+   "label": "Address Type",
+   "options": "Billing\nShipping"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "City",
+   "options": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "label": "State",
+   "options": "State"
+  },
+  {
+   "fieldname": "fixed_feeindependent_of_qty",
+   "fieldtype": "Currency",
+   "label": "Fixed Fee(Independent Of Qty)"
+  },
+  {
+   "fieldname": "standard_feesabove_199_lt",
+   "fieldtype": "Float",
+   "label": "Standard Fees{Above 199 lt)"
+  },
+  {
+   "fieldname": "variable_slab_section",
+   "fieldtype": "Section Break",
+   "label": "Variable Slab"
+  },
+  {
+   "fieldname": "upto_qty",
+   "fieldtype": "Int",
+   "label": "Upto Qty"
+  },
+  {
+   "fieldname": "section_break_yr9pb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "upto_rate",
+   "fieldtype": "Float",
+   "label": "Upto Rate"
+  },
+  {
+   "fieldname": "upto_fixed_amount",
+   "fieldtype": "Currency",
+   "label": "Upto Fixed Amount"
+  },
+  {
+   "fieldname": "column_break_exsv0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "above_rate",
+   "fieldtype": "Float",
+   "label": "Above Rate"
+  },
+  {
+   "fieldname": "above_fixed_amount",
+   "fieldtype": "Currency",
+   "label": "Above Fixed Amount"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "options": "Delivery Fees"
+  },
+  {
+   "fieldname": "section_break_ae70n",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "finance_poc",
+   "fieldtype": "Table",
+   "label": "Finance POC",
+   "options": "Finance POC"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Delivery Fees",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-17 15:16:31.708359",
+ "modified_by": "Administrator",
+ "module": "fuelbuddy",
+ "name": "Delivery Fees",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
