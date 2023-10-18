@@ -103,61 +103,61 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	"Lead": {
-		"after_insert": "fuelbuddy.fuel.chem",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-	},
-	"Sales Order": {
-		"after_insert": "fuelbuddy.fuel.sdf",
-	},
-	"Supplier": {
-		"before_save": "fuelbuddy.fuel.supplier_onboarding",
-	},
-	"Purchase Receipt": {
-		"after_insert": "fuelbuddy.fuel.margin",
-	},
-	"Delivery Fees Cal": {
-		"before_save": "fuelbuddy.fuel.Delivery Fees Calculations",
-	},
-	"Sales Order":{
-		"before_save": "fuelbuddy.fuel.POC",
-	},
-	"Journal Entry":{
-		"after_insert": "fuelbuddy.fuel.journal_entry",
-	},
-	"Planning": {
-		"after_insert": "fuelbuddy.fuel.oap",
-	},
-	"Finance": {
-		"after_insert": "fuelbuddy.fuel.oauf",
-	},
-	"Customer": {
-		"before_save": "fuelbuddy.fuel.on_boarding",
-	},
-	"Sales Order": {
-		"before_save": "fuelbuddy.fuel.party_balance",
-	},
-	"Customer": {
-		"before_save": "fuelbuddy.fuel.lead_cl",
-	},
-	"GL Entry": {
-		"before_save": "fuelbuddy.fuel.ggl_ec",
-	},
-	"Opportunity": {
-		"before_save": "fuelbuddy.fuel.activity",
-	},
-	"Opportunity": {
-		"after_save": "fuelbuddy.fuel.item_opportunity",
-	},
-	"Address": {
-		"before_save": "fuelbuddy.fuel.address_validation",
-	},
-	"Contact": {
-		"before_save": "fuelbuddy.full_name",
-	},
-}
+# doc_events = {
+# 	"Lead": {
+# 		"after_insert": "fuelbuddy.fuel.chem",
+# #		"on_cancel": "method",
+# #		"on_trash": "method"
+# 	},
+# 	"Sales Order": {
+# 		"after_insert": "fuelbuddy.fuel.sdf",
+# 	},
+# 	"Supplier": {
+# 		"before_save": "fuelbuddy.fuel.supplier_onboarding",
+# 	},
+# 	"Purchase Receipt": {
+# 		"after_insert": "fuelbuddy.fuel.margin",
+# 	},
+# 	"Delivery Fees Cal": {
+# 		"before_save": "fuelbuddy.fuel.delivery_fees_calculations",
+# 	},
+# 	"Sales Order":{
+# 		"before_save": "fuelbuddy.fuel.poc",
+# 	},
+# 	"Journal Entry":{
+# 		"after_insert": "fuelbuddy.fuel.journal_entry",
+# 	},
+# 	"Planning": {
+# 		"after_insert": "fuelbuddy.fuel.oap",
+# 	},
+# 	"Finance": {
+# 		"after_insert": "fuelbuddy.fuel.oauf",
+# 	},
+# 	"Customer": {
+# 		"before_save": "fuelbuddy.fuel.on_boarding",
+# 	},
+# 	"Sales Order": {
+# 		"before_save": "fuelbuddy.fuel.party_balance",
+# 	},
+# 	"Customer": {
+# 		"before_save": "fuelbuddy.fuel.lead_cl",
+# 	},
+# 	"GL Entry": {
+# 		"before_save": "fuelbuddy.fuel.ggl_ec",
+# 	},
+# 	"Opportunity": {
+# 		"before_save": "fuelbuddy.fuel.activity",
+# 	},
+# 	"Opportunity": {
+# 		"after_save": "fuelbuddy.fuel.item_opportunity",
+# 	},
+# 	"Address": {
+# 		"before_save": "fuelbuddy.fuel.address_validation",
+# 	},
+# 	"Contact": {
+# 		"before_save": "fuelbuddy.fuel.full_name",
+# 	},
+# }
 
 # Scheduled Tasks
 # ---------------
