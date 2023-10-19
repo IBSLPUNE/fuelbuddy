@@ -103,7 +103,16 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
+	"Payment Entry": {
+		"on_submit":"fuelbuddy.fuel.payment_entry"},
+	"Sales Invoice":{
+		"on_submit":"fuelbuddy.fuel.sales_order"	
+	},
+	"Sales Order":{
+		"before_save":"fuelbuddy.fuel.salesorder_low_balance",
+		"on_submit":"fuelbuddy.fuel.sales_order"
+	}
 # 	"Lead": {
 # 		"after_insert": "fuelbuddy.fuel.chem",
 # #		"on_cancel": "method",
@@ -157,7 +166,7 @@ app_license = "MIT"
 # 	"Contact": {
 # 		"before_save": "fuelbuddy.fuel.full_name",
 # 	},
-# }
+}
 
 # Scheduled Tasks
 # ---------------

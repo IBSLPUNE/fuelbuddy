@@ -28,8 +28,49 @@ def chem(self,method):
 #     for i in contact:
 #         frappe.delete_self('Contact', i)
 
+#Wallet Creation
 
+def payment_entry(self,method):
+    if self.party_type == "Customer" and self.payment_type == "Receive":
+        payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+        if payment_type == "Prepaid":
+            poclimit = frappe.db.get_value("POC Limit",{'customer':self.party},"name")
+            doc = frappe.get_doc("POC Limit",poclimit)
+            doc.wallet_amount = self.party_balance + self.paid_amount
+            doc.save()
 
+def sales_invoice(self,method):
+    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    if payment_type == "Prepaid":
+        poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
+        for i in doc.get("poc_wallet"):
+            if self.contact_person == i.poc:   
+                i.current_amount = i.allocated_amount
+        doc.save()
+def sales_order(self,method):
+    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    if payment_type == "Prepaid":
+        poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
+        doc =frappe.get_doc("POC Limit",poclimit)
+        doc.wallet_amount = doc.wallet_amount - self.base_grand_total
+        for i in doc.get("poc_wallet"):
+            if self.contact_person == i.poc:
+                i.current_amount = i.current_amount - self.base_grand_total
+        doc.save()
+
+def salesorder_low_balance(self,method):
+    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    if payment_type == "Prepaid":
+        poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
+        doc =frappe.get_doc("POC Limit",poclimit)
+        doc.wallet_amount = doc.wallet_amount - self.base_grand_total
+        if doc.wallet_amount <0:
+            frappe.throw("Please Do Payment First")
+        for i in doc.get("poc_wallet"):
+            if self.contact_person == i.poc and self.base_grand_total > i.current_amount and i.allocated_amount !=0:
+                frappe.throw("Allocated Limit Crossed")
+
+#Wallet Creation End
 
 def sdf(self,method):
     cust = self.customer
