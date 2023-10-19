@@ -27,7 +27,8 @@
   "business_partner",
   "delivery_partner",
   "direct",
-  "transactional",
+  "transactional_diesel",
+  "transactional_petrol",
   "section_break_jmcqb",
   "gantry",
   "space_for_gantry",
@@ -46,7 +47,8 @@
   "delivery_partner__margin",
   "direct__margin",
   "adhoc__margin",
-  "transactional__margin_",
+  "transactional__margin_diesel",
+  "transactional__margin_petrol",
   "discount_or_margin",
   "reason_for_less_margin",
   "column_break_yhqt7",
@@ -264,13 +266,6 @@
    "label": "Direct"
   },
   {
-   "default": "0",
-   "depends_on": "eval:in_list([\"Retail Sales Partner\", \"Full Stack Partner\" ], doc.supplier_group)",
-   "fieldname": "transactional",
-   "fieldtype": "Check",
-   "label": "Transactional"
-  },
-  {
    "fieldname": "section_break_jmcqb",
    "fieldtype": "Section Break"
   },
@@ -383,13 +378,6 @@
    "fieldtype": "Currency",
    "label": "ADHOC - Margin",
    "mandatory_depends_on": "eval:((doc.adhoc == 1))"
-  },
-  {
-   "depends_on": "eval:((doc.transactional == 1))",
-   "fieldname": "transactional__margin_",
-   "fieldtype": "Currency",
-   "label": "Transactional - Margin ",
-   "mandatory_depends_on": "eval:((doc.transactional == 1))"
   },
   {
    "fieldname": "discount_or_margin",
@@ -845,6 +833,31 @@
    "fieldname": "others",
    "fieldtype": "Data",
    "label": "Others"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:in_list([\"Retail Sales Partner\", \"Full Stack Partner\" ], doc.supplier_group)",
+   "fieldname": "transactional_diesel",
+   "fieldtype": "Check",
+   "label": "Transactional Diesel"
+  },
+  {
+   "default": "0",
+   "fieldname": "transactional_petrol",
+   "fieldtype": "Check",
+   "label": "Transactional Petrol"
+  },
+  {
+   "depends_on": "eval:((doc.transactional == 1))",
+   "fieldname": "transactional__margin_diesel",
+   "fieldtype": "Currency",
+   "label": "Transactional - Margin Diesel",
+   "mandatory_depends_on": "eval:((doc.transactional == 1))"
+  },
+  {
+   "fieldname": "transactional__margin_petrol",
+   "fieldtype": "Currency",
+   "label": "Transactional - Margin Petrol"
   }
  ],
  "icon": "fa fa-user",
@@ -860,7 +873,7 @@
   }
  ],
  "make_attachments_public": 1,
- "modified": "2023-10-16 21:11:44.610664",
+ "modified": "2023-10-19 17:26:32.358824",
  "modified_by": "Administrator",
  "module": "fuelbuddy",
  "name": "Supplier Onboarding",

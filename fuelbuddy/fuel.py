@@ -28,6 +28,19 @@ def chem(self,method):
 #     for i in contact:
 #         frappe.delete_self('Contact', i)
 
+def sales_partner_creation(self,method):
+    if self.transactional_diesel == 1 or self.transactional_petrol == 1:
+        sales_partner = frappe.new_doc("Sales Partner")
+        sales_partner.supplier = self.name
+        sales_partner.transaction_type = self.transaction_type
+        for i in sales_partner.get("sales_partner_commission_table"):
+            if self.transactional_diesel == 1:
+                i.item = "Diesel"
+                i.commission = self.transactional__margin_diesel
+            if self.transactional_petrol == 1:
+                i.item = "Petrol"
+                i.commission = self.transactional__margin_petrol
+
 #Wallet Creation
 
 def payment_entry(self,method):

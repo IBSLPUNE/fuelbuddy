@@ -112,6 +112,9 @@ doc_events = {
 	"Sales Order":{
 		"before_save":"fuelbuddy.fuel.salesorder_low_balance",
 		"on_submit":"fuelbuddy.fuel.sales_order"
+	},
+	"Supplier":{
+		"after_insert":"fuelbuddy.fuel.sales_partner_creation"
 	}
 # 	"Lead": {
 # 		"after_insert": "fuelbuddy.fuel.chem",
