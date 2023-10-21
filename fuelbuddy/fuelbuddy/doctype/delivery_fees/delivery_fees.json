@@ -30,8 +30,7 @@
   "above_fixed_amount",
   "amended_from",
   "section_break_ae70n",
-  "finance_poc",
-  "amended_from"
+  "finance_poc"
  ],
  "fields": [
   {
@@ -167,16 +166,13 @@
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
-   "no_copy": 1,
-   "options": "Delivery Fees",
-   "print_hide": 1,
-   "read_only": 1
+   "options": "Delivery Fees"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-17 15:16:31.708359",
+ "modified": "2023-10-21 10:19:18.732301",
  "modified_by": "Administrator",
  "module": "fuelbuddy",
  "name": "Delivery Fees",
