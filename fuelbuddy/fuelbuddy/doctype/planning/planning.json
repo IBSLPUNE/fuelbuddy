@@ -355,15 +355,6 @@
    "options": "Planning",
    "print_hide": 1,
    "read_only": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Planning",
-   "print_hide": 1,
-   "read_only": 1
   }
  ],
  "icon": "fa fa-search",
