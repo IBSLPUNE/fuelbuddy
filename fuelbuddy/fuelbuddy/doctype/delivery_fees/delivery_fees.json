@@ -147,12 +147,6 @@
    "label": "Above Fixed Amount"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "options": "Delivery Fees"
-  },
-  {
    "fieldname": "section_break_ae70n",
    "fieldtype": "Section Break"
   },
