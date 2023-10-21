@@ -384,15 +384,6 @@
    "print_hide": 1,
    "read_only": 1
   },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Finance",
-   "print_hide": 1,
-   "read_only": 1
-  }
  ],
  "icon": "fa fa-search",
  "index_web_pages_for_search": 1,
