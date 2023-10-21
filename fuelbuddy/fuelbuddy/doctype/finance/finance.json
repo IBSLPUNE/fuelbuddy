@@ -58,7 +58,6 @@
   "verified_by",
   "column_break_17",
   "remarks",
-  "amended_from",
   "amended_from"
  ],
  "fields": [
@@ -399,7 +398,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-10-17 15:01:02.787806",
+ "modified": "2023-10-21 10:09:35.525730",
  "modified_by": "Administrator",
  "module": "fuelbuddy",
  "name": "Finance",
