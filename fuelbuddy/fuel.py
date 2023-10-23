@@ -53,7 +53,7 @@ def payment_entry(self,method):
             doc.save()
 
 def sales_invoice(self,method):
-    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    payment_type = frappe.db.get_value("Customer",self.customer,"payment_type")
     if payment_type == "Prepaid":
         poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
         for i in doc.get("poc_wallet"):
@@ -61,7 +61,7 @@ def sales_invoice(self,method):
                 i.current_amount = i.allocated_amount
         doc.save()
 def sales_order(self,method):
-    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    payment_type = frappe.db.get_value("Customer",self.customer,"payment_type")
     if payment_type == "Prepaid":
         poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
         doc =frappe.get_doc("POC Limit",poclimit)
@@ -72,7 +72,7 @@ def sales_order(self,method):
         doc.save()
 
 def salesorder_low_balance(self,method):
-    payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+    payment_type = frappe.db.get_value("Customer",self.customer,"payment_type")
     if payment_type == "Prepaid":
         poclimit = frappe.db.get_value("POC Limit",self.customer,"name")
         doc =frappe.get_doc("POC Limit",poclimit)
