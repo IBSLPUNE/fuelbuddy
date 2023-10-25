@@ -107,7 +107,7 @@ doc_events = {
 	"Payment Entry": {
 		"on_submit":"fuelbuddy.fuel.payment_entry"},
 	"Sales Invoice":{
-		"on_submit":"fuelbuddy.fuel.sales_order"	
+		"on_submit":"fuelbuddy.fuel.sales_invoice"	
 	},
 	"Sales Order":{
 		"after_insert":"fuelbuddy.fuel.salesorder_low_balance",
