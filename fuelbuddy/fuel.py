@@ -49,7 +49,8 @@ def payment_entry(self,method):
         if payment_type == "Prepaid" and doc.docstatus == 2:
             poclimit = frappe.db.get_value("POC Limit",{'customer':self.party},"name")
             doc = frappe.get_doc("POC Limit",poclimit)
-            doc.wallet_amount = self.party_balance + self.paid_amount
+            # Calculate wallet_amount using the absolute value of party_balance
+            doc.wallet_amount = abs(self.party_balance) + self.paid_amount
             doc.save()
 
 def sales_invoice(self,method):
