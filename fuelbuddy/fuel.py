@@ -46,7 +46,7 @@ def sales_partner_creation(self,method):
 def payment_entry(self,method):
     if self.party_type == "Customer" and self.payment_type == "Receive":
         payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
-        if payment_type == "Prepaid" and doc.docstatus == 2:
+        if payment_type == "Prepaid" and self.docstatus == 1:
             poclimit = frappe.db.get_value("POC Limit",{'customer':self.party},"name")
             doc = frappe.get_doc("POC Limit",poclimit)
             # Calculate wallet_amount using the absolute value of party_balance
