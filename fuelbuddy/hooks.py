@@ -105,7 +105,9 @@ app_license = "MIT"
 
 doc_events = {
 	"Payment Entry": {
-		"on_submit":"fuelbuddy.fuel.payment_entry"},
+		"on_submit":"fuelbuddy.fuel.payment_entry",
+		"after_cancel":"fuelbuddy.fuel.payment_entry_can"
+	}
 	"Sales Invoice":{
 		"on_submit":"fuelbuddy.fuel.sales_invoice"	
 	},
