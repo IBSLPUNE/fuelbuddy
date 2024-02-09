@@ -111,7 +111,8 @@ doc_events = {
 	},
 	"Sales Order":{
 		"after_insert":"fuelbuddy.fuel.salesorder_low_balance",
-		"on_submit":"fuelbuddy.fuel.sales_order"
+		"on_submit":"fuelbuddy.fuel.sales_order",
+		"after_cancel":"fuelbuddy.fuel.sales_order_can"
 	},
 	"Supplier":{
 		"after_insert":"fuelbuddy.fuel.sales_partner_creation"
