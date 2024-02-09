@@ -46,11 +46,21 @@ def sales_partner_creation(self,method):
 def payment_entry(self,method):
     if self.party_type == "Customer" and self.payment_type == "Receive":
         payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
-        if payment_type == "Prepaid" and self.docstatus == 1:
+        if payment_type == "Prepaid":
             poclimit = frappe.db.get_value("POC Limit",{'customer':self.party},"name")
             doc = frappe.get_doc("POC Limit",poclimit)
             # Calculate wallet_amount using the absolute value of party_balance
             doc.wallet_amount = abs(self.party_balance) + self.paid_amount
+            doc.save()
+
+def payment_entry_can(self,method):
+    if self.party_type == "Customer" and self.payment_type == "Receive":
+        payment_type = frappe.db.get_value("Customer",self.party,"payment_type")
+        if payment_type == "Prepaid":
+            poclimit = frappe.db.get_value("POC Limit",{'customer':self.party},"name")
+            doc = frappe.get_doc("POC Limit",poclimit)
+            # Calculate wallet_amount using the absolute value of party_balance
+            doc.wallet_amount = abs(self.party_balance) - self.paid_amount
             doc.save()
 
 def sales_invoice(self,method):
